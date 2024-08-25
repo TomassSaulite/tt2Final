@@ -8,5 +8,12 @@ Signup
 {% endblock%}
 
 {% block index %}
+<div class="d-flex justify-content-center mt-5 mb-5" style="height: 500px;">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign up</button>
+    </form>
+</div>
 
   {% endblock%}
