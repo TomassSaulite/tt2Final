@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+
 {% block title %}
 Welcome
 {% endblock%}
 
 {% block index %}
-<p>dfjisdnfnsdiofoidn</p>
-{% endblock%}
+<div class=" mt-5 mb-5 mr-5">
+    <!-- <div class="float-end mt-5 mb-5 mr-5"> -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/bigPhoto1.jpeg' %}" class="d-block" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/bigPhoto2.jpeg' %}" class="d-block" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/bigPhoto3.jpeg' %}" class="d-block" alt="...">
+      </div>
+    </div>
+  </div>
+</div>
+  {% endblock%}
