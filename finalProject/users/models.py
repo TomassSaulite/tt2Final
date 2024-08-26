@@ -42,7 +42,6 @@ class User(AbstractBaseUser,PermissionsMixin):
     isClient = models.BooleanField(default=1)
     isRestaurant = models.BooleanField(default=0)
     objects = CustomUserManager()
-
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 

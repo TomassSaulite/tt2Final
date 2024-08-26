@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Login
+{% endblock%}
+
+
+
+
+{% block index %}
+<div style="text-align: center;">
+      {% if request.user.is_authenticated %}
+          <h1>Hello, {{ request.user.username }}!</h1>
+      {% else %}
+          <h1>Hello, Guest!</h1>
+      {% endif %}
+</div>
+{% endblock%}

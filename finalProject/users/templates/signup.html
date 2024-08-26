@@ -8,12 +8,47 @@ Signup
 {% endblock%}
 
 {% block index %}
-<div class="d-flex justify-content-center mt-5 mb-5" style="height: 500px;">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign up</button>
-    </form>
+<style>
+    form p {
+        display: flex;
+        justify-content: space-between;  
+        align-items: center;  
+        margin-bottom: 1rem;  
+    }
+
+    form p label {
+        margin-right: 10px;
+        order: 1; 
+    }
+
+    form p input, form p select, form p textarea {
+        order: 2;
+    }
+
+</style>
+
+<div class="d-flex justify-content-center pt-5 pb-5">
+    <div class="p-3 border bg-light">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Signup</button>
+        </form>
+    </div>
 </div>
+<script>
+    document.getElementById('id_isClient').checked = false;
+    document.getElementById('id_isRestaurant').checked = false;
+    document.getElementById('id_isClient').addEventListener('change', function() {
+        if (this.checked) {
+            document.getElementById('id_isRestaurant').checked = false;
+        }
+    });
+    document.getElementById('id_isRestaurant').addEventListener('change', function() {
+        if (this.checked) {
+            document.getElementById('id_isClient').checked = false;
+        }
+    });
+</script>
 
   {% endblock%}

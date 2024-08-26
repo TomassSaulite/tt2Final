@@ -8,20 +8,49 @@ Login
 {% endblock%}
 
 {% block index %}
+<style>
+   .bigDiv {
+        display: flex;
+        justify-content: space-between;  
+        align-items: center;  
+        margin-bottom: 1rem;  
+    }
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.non_field_errors }}
-    <div>
-        <label for="email">Email</label>
-        {{ form.email }}
+    #labeldiv{
+        margin-right: 10px;
+        order: 1; 
+    }
+
+    #formdiv {
+        order: 2;
+    }
+</style>
+<div class="d-flex justify-content-center pt-5 pb-5">
+    <div class="p-3 border bg-light text-center">
+        <div class="bigDiv">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div id="labeldiv">
+                    <label style ="float: left;" for="email">Email</label>
+                </div>
+                <div id="formdiv">
+                    {{ form.email }}
+                </div>
+                <br>
+                <div id="labeldiv">
+                    <label style =" float: left;" for="password">Password</label>
+                </div>
+                <div id="formdiv">
+                    {{ form.password }}
+                </div>
+                <br>
+                    <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
-    <div>
-        <label for="password">Password</label>
-        {{ form.password }}
-    </div>
-    <button type="submit">Login</button>
-</form>
+</div>
+
 
 
   {% endblock%}

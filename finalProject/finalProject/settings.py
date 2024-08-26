@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users'
+    # My apps
+    'users',
+    'client',
+    'restaurant'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +125,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  
+SESSION_COOKIE_AGE = 1209600  
+SESSION_SAVE_EVERY_REQUEST = True 
