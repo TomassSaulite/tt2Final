@@ -1,0 +1,17 @@
+{% extends "users/base.html" %}
+{% block title %}
+restaurant
+{% endblock%}
+
+{% block index %}
+<div style="text-align: center;">
+    {% if request.user.is_authenticated %}
+        <h1>Hello, {{ request.user.username }}!</h1>
+    {% else %}
+        <h1>Hello, Guest!</h1>
+    {% endif %}
+</div>
+{%endblock%}
+
+<!-- t@ttt.lv -->
+<!-- veddid-kucgeJ-0ronwy -->

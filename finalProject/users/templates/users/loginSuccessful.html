@@ -1,0 +1,50 @@
+{% extends "users/base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+Login
+{% endblock%}
+
+
+
+
+{% block index %}
+<div style="text-align: center;">
+      {% if request.user.is_authenticated %}
+          <h1>Hello, {{ request.user.username }}!</h1>
+      {% else %}
+          <h1>Hello, Guest!</h1>
+      {% endif %}
+</div>
+
+<p id="isClient" style="visibility: hidden;" > {{ isClient }}</p>
+
+<script>
+  function redirect() {
+      setTimeout(function() {
+          var userIsClient = document.getElementById("isClient").textContent;
+          if (userIsClient == 1) {
+              window.location.href = "{% url 'client/extraClientInfo' %}";
+          } else if (userIsClient == 0) {
+              window.location.href = "{% url 'restaurant/extraRestaurantInfo' %}";
+          }
+      }, 5000);
+  }
+
+
+  window.onload = redirect;
+</script>
+    <h1>Redirecting you in 5 seconds...</h1>
+{% endblock%}
+
+
+<!-- fffff@ggggg.lv -->
+<!-- efaf@£@£!rRERQ123RWD -->
+ <!-- Client -->
+
+
+ RRRRR@rrr.lv
+ <!-- Restaurant -->
+

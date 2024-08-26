@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     # My apps
     'users',
     'client',
-    'restaurant'
+    'restaurant',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'login_required.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -129,3 +131,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False  
 SESSION_COOKIE_AGE = 1209600  
 SESSION_SAVE_EVERY_REQUEST = True 
+LOGIN_REDIRECT_URL = "users/login"

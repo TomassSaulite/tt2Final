@@ -1,17 +1,4 @@
 from django.db import models
-# from django import forms
-# from django.contrib.auth.models import AbstractUser
-
-# class User(AbstractUser):
-#     name = models.CharField(max_length=255)
-#     email = models.EmailField(max_length=255,unique=True)
-#     password = forms.CharField(widget=forms.PasswordInput)
-#     last_login = forms.DateField()
-#     USERNAME_FIELD = email
-#     # isclient = models.BooleanField()
-#     # isRestaurant = models.BooleanField()
-
-
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,PermissionsMixin
 
 class CustomUserManager(BaseUserManager):
