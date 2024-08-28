@@ -30,10 +30,10 @@ def custom_login_view(request):
     # return redirect(next_url)
     if request.method == 'POST':
         if form.is_valid():
-            user = form.get_user()  # Fetch the authenticated user
+            user = form.get_user()
             if user:
-                auth_login(request, user)  # Correct usage of login() function
-                return redirect('loginSuccessful')  # Replace 'home' with your desired success URL
+                auth_login(request, user)
+                return redirect('loginSuccessful')
     return render(request, 'users/login.html', {'form': form})
 
 # @login_required(redirect_field_name=None)
