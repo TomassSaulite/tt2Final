@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'client',
     'restaurant',
     'orders'
-]
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,9 +50,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'login_required.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'finalProject.urls'
@@ -128,7 +126,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False  
 SESSION_COOKIE_AGE = 1209600  
 SESSION_SAVE_EVERY_REQUEST = True 
-LOGIN_REDIRECT_URL = "users/login"
+SESSION_COOKIE_SECURE = True  
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SECURE = True
+LOGIN_REDIRECT_URL = 'loginSuccessful'
+LOGIN_URL = '/'
+# 

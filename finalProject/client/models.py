@@ -1,9 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,PermissionsMixin
 
+class Clients():
+    country = models.CharField(max_length=50) 
+    phoneNum = models.PositiveIntegerField()
+    name = models.CharField(max_length=25)
+    lastName = models.CharField(max_length=25)
 
-class Clients(AbstractBaseUser,PermissionsMixin):
-    country = 
-
-
-# Create your models here.
