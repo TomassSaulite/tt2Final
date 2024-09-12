@@ -27,7 +27,6 @@ def signup(request):
 
 def custom_login_view(request):
     form = CustomLoginForm(request=request, data=request.POST or None)
-    # return redirect(next_url)
     if request.method == 'POST':
         if form.is_valid():
             user = form.get_user()
@@ -36,7 +35,7 @@ def custom_login_view(request):
                 return redirect('loginSuccessful')
     return render(request, 'users/login.html', {'form': form})
 
-# @login_required(redirect_field_name=None)
+@login_required(redirect_field_name=None)
 def loginSuccessful(request):
     isClient = request.user.isClient
     isClient=int(isClient)
@@ -46,7 +45,7 @@ def loginSuccessful(request):
 
 from django.contrib.auth import logout as logouts
 
-# @login_required(redirect_field_name=None)
+@login_required(redirect_field_name=None)
 def logout(request):
     if request.method == 'POST':
         logouts(request)
